@@ -1,5 +1,5 @@
 resource "digitalocean_droplet" "web" {
-  count              = 2
+  count              = 1
   name               = format("bootcamp-%s-web%02d", var.inuits_username, count.index + 1)
   image              = data.digitalocean_image.base.image
   ssh_keys           = [ digitalocean_ssh_key.default.fingerprint ]
@@ -10,7 +10,7 @@ resource "digitalocean_droplet" "web" {
 }
 
 resource "digitalocean_record" "web" {
-  count  = 2
+  count  = 1
   domain = data.digitalocean_domain.default.name
   type   = "A"
   ttl    = 60
