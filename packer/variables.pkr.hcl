@@ -5,7 +5,7 @@ variable "do_api_token" {
 
 variable "do_base_image" {
   type = string
-  default = "centos-8-x64"
+  default = "centos-stream-8-x64"
 }
 
 variable "do_size" {
